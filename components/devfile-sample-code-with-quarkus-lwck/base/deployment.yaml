@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: devfile-sample-code-with-quarkus-lwck
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: devfile-sample-code-with-quarkus-lwck
+    app.kubernetes.io/part-of: redtiger
+  name: devfile-sample-code-with-quarkus-lwck
+  namespace: pdave-tenant
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: java-quarkus-app
+      app.kubernetes.io/instance: devfile-sample-code-with-quarkus-lwck
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: java-quarkus-app
+        app.kubernetes.io/instance: devfile-sample-code-with-quarkus-lwck
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload:pdave-tenant-devfile-sample-code-with-quarkus-lwck
+        name: my-java-quarkus
+        ports:
+        - containerPort: 8081
+          name: http
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 100m
+            memory: 250Mi
+          requests:
+            cpu: 10m
+            memory: 100Mi
+status: {}
