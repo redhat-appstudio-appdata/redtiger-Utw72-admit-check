@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: devfile-sample-code-with-quarkus-lwck
+  namespace: pdave-tenant
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload@sha256:a02c5687885ccbe9548d622dcfcde5546c87bfd5ccc2a8afff1eb0110060eaf6
+        name: my-java-quarkus
+        resources: {}
+status: {}
