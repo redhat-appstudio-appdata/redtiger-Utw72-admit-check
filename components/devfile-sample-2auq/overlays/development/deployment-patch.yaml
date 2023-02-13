@@ -13,7 +13,7 @@ spec:
       creationTimestamp: null
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/user-workload:pdave-tenant-devfile-sample-2auq
+      - image: quay.io/redhat-appstudio/user-workload@sha256:aee0fb1266ce40e9b798dcd706087fef50db040b5b8ca3594138d9bcab380766
         name: my-nodejs
         resources: {}
 status: {}
